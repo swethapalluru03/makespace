@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [SmokeSuite]">
+  <test thread-count="5" name="SmokeRegistration(failed)">
+    <classes>
+      <class name="testcases.BookAppointment">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="services"/>
+        </methods>
+      </class> <!-- testcases.BookAppointment -->
+    </classes>
+  </test> <!-- SmokeRegistration(failed) -->
+</suite> <!-- Failed suite [SmokeSuite] -->
