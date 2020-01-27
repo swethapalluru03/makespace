@@ -7,7 +7,10 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="getpricing"/>
+          <include name="selectPlan"/>
           <include name="checkOut"/>
+          <include name="services"/>
         </methods>
       </class> <!-- testcases.BookAppointment -->
     </classes>

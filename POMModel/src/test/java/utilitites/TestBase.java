@@ -1,5 +1,6 @@
 package utilitites;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -20,12 +21,14 @@ public class TestBase {
 	public static String projectPath = System.getProperty("user.dir");
 	public static String reportFilePath = projectPath + "/Reports/";
 	public static String reportPathName = new SimpleDateFormat("YYYY-MM-dd-hh-mm-ss-SSS").format(new Date()) + "_Report.html";
+	public ConfigFileUtility globalConfig = new ConfigFileUtility();
 
-	public WebDriver launchBrowser() {
+	public WebDriver launchBrowser() throws IOException {
+		globalConfig.loadPropertyFile();
 		reports = new ExtentReports(reportFilePath + "Web_Report_" + reportPathName, false);
 		WebDriverManager.chromedriver().version("79").setup();
 		driver = new ChromeDriver();
-		driver.get("https://dev.mksp.co");
+		driver.get(globalConfig.getProperty("URL"));
 		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();

@@ -1,5 +1,7 @@
 package testcases;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -21,7 +23,7 @@ public class BookAppointment extends TestBase {
 	CheckOutPage checkOutPage = new CheckOutPage(driver);
 	
 	@BeforeClass
-	public void setUp() {
+	public void setUp() throws IOException {
 		driver = launchBrowser();
 	}
 
